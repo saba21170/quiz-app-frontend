@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import "./quizCreator.css"; // Import CSS file
+import "./quizCreator.css"; 
 import { useDispatch } from "react-redux";
 import { createQuiz } from "./actions";
+
 
 function QuizCreator() {
   const [quizData, setQuizData] = useState({

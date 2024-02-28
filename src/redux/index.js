@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import quizReducer from "../components/quizCreator/reducers";
 
 const rootReducer = combineReducers({
-  addQuiz: quizReducer,
+  quiz: quizReducer,
 });
 
 export default rootReducer;

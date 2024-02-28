@@ -80,3 +80,43 @@
 .create-quiz-btn:hover {
   background-color: #218838;
 }
+
+
+
+/* QuizList css file */
+
+.quiz-list-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quiz-list-header {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.quiz-list-item {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-list-item:hover {
+    background-color: #e9ecef;
+}
+
+.quiz-title {
+    font-size: 18px;
+    color: #007bff;
+    
+}
+
+.no-quizzes-msg {
+    font-size: 16px;
+    color: #999;
+}
