@@ -11,11 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<QuizCreator/>}/>
           <Route path="/quizzes" element={<QuizList/>}/>
-          <Route path="/quiz/:id" element={<Quiz/>}/>
-          <Route
-            path="/quiz/:id"
-            render={({ match }) => <Quiz quizId={match.params.id} />}
-          />
+          <Route path="/quiz/:id" element={<Quiz />}/>
+          
 
         </Routes>
       </div>

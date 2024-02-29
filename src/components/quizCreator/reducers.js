@@ -1,4 +1,4 @@
-import { ADD_QUIZ, LIST_QUIZ,GET_BY_ID} from "../../redux/types";
+import { ADD_QUIZ, LIST_QUIZ,GET_BY_ID , SUBMIT_QUIZ} from "../../redux/types";
 
 const quizReducer = (state = {}, action) => {
   switch (action.type) {
@@ -17,6 +17,11 @@ const quizReducer = (state = {}, action) => {
         ...state,
         byId: action.payload,
       };
+      case SUBMIT_QUIZ:
+        return {
+          ...state,
+          submit: action.payload,
+        };
     default:
       return state;
   }

@@ -35,10 +35,8 @@ function QuizCreator() {
   };
 
   const dispatch = useDispatch();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(quizData, "data from submit");
     dispatch(createQuiz(quizData));
   };
 
