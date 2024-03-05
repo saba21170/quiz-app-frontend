@@ -1,122 +1,37 @@
 /* QuizCreator.css */
 
-/* Style for the main container */
-.quiz-creator-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-    /* Center the container horizontally and vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensure the container takes the full height of the viewport */
-  }
 
+.quiz-creator-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
 .quiz-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center; /* Center the text */
-  }
-/* Style for the form */
-.quiz-form {
   margin-bottom: 20px;
-  width: 400px;
 }
 
-/* Style for question input */
+.question-container {
+  margin-bottom: 20px;
+}
+
 .question-input {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  font-size: 16px;
+  margin-bottom: 10px;
 }
 
-/* Style for option input */
 .option-input {
   margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  font-size: 14px;
 }
 
-/* Style for add question button */
 .add-question-btn {
-  margin-right: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-.add-question-btn:hover {
-  background-color: #0056b3;
-}
-
-/* Style for create quiz button */
 .create-quiz-btn {
-  margin-top: 10px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.create-quiz-btn:hover {
-  background-color: #218838;
+  margin-top: 20px;
 }
 
 
-
-/* QuizList css file */
-
-.quiz-list-container {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.quiz-list-header {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.quiz-list-item {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.quiz-list-item:hover {
-    background-color: #e9ecef;
-}
-
-.quiz-title {
-    font-size: 18px;
-    color: #007bff;
-    
-}
-
-.no-quizzes-msg {
-    font-size: 16px;
-    color: #999;
-}

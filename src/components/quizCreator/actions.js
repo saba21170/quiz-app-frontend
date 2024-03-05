@@ -45,7 +45,6 @@ export const quizById = (id) => {
       const response = await fetch(`http://localhost:5000/quiz/getById/${id}`);
 
       const data = await response.json();
-
       dispatch({
         type: GET_BY_ID,
         payload: data,
@@ -67,6 +66,7 @@ export const submitQuiz = (submitBody) => {
         body: JSON.stringify(submitBody),
       });
       const data = await response.json();
+      console.log(data,"submit quiz response")
 
       dispatch({
         type: SUBMIT_QUIZ,

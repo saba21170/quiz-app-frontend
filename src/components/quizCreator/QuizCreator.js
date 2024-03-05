@@ -1,11 +1,10 @@
-// QuizCreator.js
-
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import "./quizCreator.css"; 
 import { useDispatch } from "react-redux";
 import { createQuiz } from "./actions";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
+import "./quizCreator.css";
 
 function QuizCreator() {
   const [quizData, setQuizData] = useState({
@@ -34,10 +33,43 @@ function QuizCreator() {
     });
   };
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createQuiz(quizData));
+
+    const isValidate =
+      quizData.title.trim() !== "" &&
+      quizData.questions.every(
+        (q) =>
+          q.question.trim() !== "" &&
+          q.options.every((o) => o.trim() !== "") &&
+          q.correctOption
+      );
+
+    if (isValidate) {
+      dispatch(createQuiz(quizData))
+        .then(() => {
+          navigate("/quizzes");
+        })
+        .catch(() => console.log("Something went wrong!"));
+    } else {
+      alert("Please fill all the fields and select correct options.");
+    }
+  };
+
+  const handleCorrectOptionChange = (questionIndex, value) => {
+    const newQuestions = [...quizData.questions];
+    const selectedQuestion = newQuestions[questionIndex];
+    const isOptionValid = selectedQuestion.options.includes(value);
+
+    if (isOptionValid) {
+      selectedQuestion.correctOption = value;
+      setQuizData({ ...quizData, questions: newQuestions });
+    } else {
+      alert("Please select a valid option.");
+    }
   };
 
   return (
@@ -85,8 +117,20 @@ function QuizCreator() {
                 />
               ))}
             </Form.Group>
+
+            <Form.Group controlId={`correctOption-${questionIndex}`}>
+              <Form.Label>Correct Option:</Form.Label>
+              <Form.Control
+                type="text"
+                value={question.correctOption}
+                onBlur={(e) =>
+                  handleCorrectOptionChange(questionIndex, e.target.value)
+                }
+              />
+            </Form.Group>
           </div>
         ))}
+
         <Button
           className="add-question-btn"
           variant="primary"

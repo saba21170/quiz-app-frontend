@@ -12,13 +12,9 @@ function App() {
           <Route path="/" element={<QuizCreator/>}/>
           <Route path="/quizzes" element={<QuizList/>}/>
           <Route path="/quiz/:id" element={<Quiz />}/>
-          
-
         </Routes>
       </div>
     </Router>
-    
-    
   );
 }
 
